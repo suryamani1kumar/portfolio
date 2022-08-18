@@ -1,18 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
-import EmailIcon from '@mui/icons-material/Email';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import {
+    Email,
+    GitHub,
+    LinkedIn,
+    WhatsApp
+} from '@mui/icons-material';
+
 
 function Contact() {
+    const [firstName, setfirstName] = useState('')
+    const [lastName, setlastName] = useState('')
+    const [email, setEmail] = useState('')
+    const [phone, setPhone] = useState('')
     return (
         <div className='contact'>
             <div className='text' style={{ color: '#606060' }}>
                 <h2>Contact Us</h2>
             </div>
             <div className='contact-form'>
-
                 <div className='location'>
                     <div className='location-text '>
                         <span> get </span>
@@ -20,52 +26,51 @@ function Contact() {
                     </div>
                     <div className='media'>
                         <div className='mobile'>
-                            <PhoneAndroidIcon />
+                            <WhatsApp />
                             <span>:</span>
                             <span>9821131412</span>
                         </div>
                         <div className='mobile'>
-                            <EmailIcon />
+                            <Email />
                             <span>:</span>
                             <span>suryamani123@gmail.com</span>
                         </div>
                         <div className='social'>
                             <span>Social-media</span>
-                            <GitHubIcon />
-                            <LinkedInIcon />
-                            <WhatsAppIcon />
-
-
+                            <a href='https://github.com/suryamani1kumar'>
+                                <GitHub />
+                            </a>
+                            <a href='https://www.linkedin.com/in/suryamani-kumar-75a42920a/'>
+                                <LinkedIn />
+                            </a>
                         </div>
-
-
-
                     </div>
-
-
-
                 </div>
                 <div className='form-input'>
-                    <label for='name'>FirstName</label>
-                    <input type='text' />
-                    <label for='name'>LastName</label>
-                    <input type='text' />
-                    <label for='email'>Email</label>
-                    <input type='email' />
-                    <label for='number'>Number</label>
-                    <input type='text' />
+                    <label htmlFor='name'>FirstName</label>
+                    <input type='text'
+                        value={firstName}
+                        onChange={(e) => setfirstName(e.target.value)} />
+                    <label htmlFor='name'>LastName</label>
+                    <input type='text'
+                        value={lastName}
+                        onChange={(e) => setlastName(e.target.value)} />
+                    <label htmlFor='email'>Email</label>
+                    <input type='email'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)} />
+                    <label htmlFor='number'>Number</label>
+                    <input type='text'
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)} />
 
-                    <label for='message' >Message</label>
+                    <label htmlFor='message' >Message</label>
                     <textarea ></textarea>
 
                     <button type='sumbit'>Sumbit</button>
                 </div>
 
             </div>
-
-
-
-
         </div>
     )
 }
