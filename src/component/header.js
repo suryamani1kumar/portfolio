@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
+import Logo from '../asset/suryamani.png'
 
 import './header.css'
 
@@ -8,7 +9,7 @@ function Header() {
     return (
         <div className='header'>
             <div className='logo'>
-                <img src='./suryamani.png' alt='logo' className='imgLogo' />
+                <img src={Logo} alt='logo' className='imgLogo' />
                 <span>S&R$Y</span>
             </div>
             <ul>
