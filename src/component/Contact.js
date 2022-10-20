@@ -1,11 +1,8 @@
 import React, { useState } from 'react'
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
-import {
-    Email,
-    GitHub,
-    LinkedIn,
-    WhatsApp
-} from '@mui/icons-material';
+
+import emailjs from 'emailjs-com'
+import { useRef } from 'react';
 
 
 function Contact() {
@@ -13,6 +10,17 @@ function Contact() {
     const [lastName, setlastName] = useState('')
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
+    const [message, setMessage] = useState('')
+    const form = useRef()
+    const sumbitform = (e) => {
+        e.prventDefault()
+        emailjs.sendForm('service_sks6eif', 'template_oeubmzr', e.target, 'QlkifqbMNW8h68Ebj')
+            .then((result) => {
+                window.location.reload()  //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior) 
+            }, (error) => {
+                console.log(error.text);
+            });
+    }
     return (
         <div className='contact'>
             <div className='text' style={{ color: '#606060' }}>
@@ -24,29 +32,9 @@ function Contact() {
                         <span> get </span>
                         <span>in touch</span>
                     </div>
-                    <div className='media'>
-                        <div className='mobile'>
-                            <WhatsApp />
-                            <span>:</span>
-                            <span>9821131412</span>
-                        </div>
-                        <div className='mobile'>
-                            <Email />
-                            <span>:</span>
-                            <span>suryamani123@gmail.com</span>
-                        </div>
-                        <div className='social'>
-                            <span>Social-media</span>
-                            <a href='https://github.com/suryamani1kumar'>
-                                <GitHub />
-                            </a>
-                            <a href='https://www.linkedin.com/in/suryamani-kumar-75a42920a/'>
-                                <LinkedIn />
-                            </a>
-                        </div>
-                    </div>
+                    
                 </div>
-                <div className='form-input'>
+                < form className='form-input' onSubmit={sumbitform} ref={form}>
                     <label htmlFor='name'>FirstName</label>
                     <input type='text'
                         value={firstName}
@@ -65,13 +53,13 @@ function Contact() {
                         onChange={(e) => setPhone(e.target.value)} />
 
                     <label htmlFor='message' >Message</label>
-                    <textarea ></textarea>
+                    <textarea value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
 
-                    <button type='sumbit'>Sumbit</button>
-                </div>
+                    <button type='sumbit' >Send Message</button>
+                </form>
 
             </div>
-        </div>
+        </div >
     )
 }
 
