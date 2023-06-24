@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
-
 import emailjs from 'emailjs-com';
-import { useRef } from 'react';
+import Form from './Form';
+import { contactForm, erroronBlur, validation } from '../utils/input';
 
 function Contact() {
   const [contact, setContact] = useState({
@@ -11,10 +10,15 @@ function Contact() {
     phone: '',
     message: '',
   });
+  const [blurError, SetblurError] = useState({});
 
-  const form = useRef();
   const sumbitform = (e) => {
     e.preventDefault();
+    const err = validation(contact, SetblurError);
+    if (err) {
+      return;
+    }
+    // console.log('err', err);
     console.log(contact);
     // emailjs
     //   .sendForm(
@@ -48,50 +52,27 @@ function Contact() {
             <span>in touch</span>
           </div>
         </div>
-        <form className="form-input" onSubmit={sumbitform}>
-          <input
-            type="text"
-            value={contact.name}
-            id="name"
-            name="name"
-            placeholder="Enter name"
-            autoComplete="off"
-            required
-            onChange={(e) => handleContact(e)}
-          />
-
-          <input
-            type="email"
-            value={contact.email}
-            id="email"
-            name="email"
-            placeholder="enater email"
-            autoComplete="off"
-            required
-            onChange={(e) => handleContact(e)}
-          />
-          <input
-            type="phone"
-            value={contact.phone}
-            id="phone"
-            name="phone"
-            placeholder="phone"
-            autoComplete="off"
-            required
-            onChange={(e) => handleContact(e)}
-          />
-
+        <form onSubmit={sumbitform}>
+          {contactForm(contact, blurError).map((input, i) => (
+            <Form
+              key={i}
+              {...input}
+              onChange={(e) => handleContact(e)}
+              onBlur={(e) => erroronBlur(e, SetblurError)}
+            />
+          ))}
           <textarea
             type="text"
             value={contact.message}
             id="message"
             name="message"
-            placeholder="message"
+            placeholder="Comment"
             autoComplete="off"
             required
             onChange={(e) => handleContact(e)}
+            onBlur={(e) => erroronBlur(e, SetblurError)}
           ></textarea>
-
+          {blurError.message}
           <button type="sumbit">Send Message</button>
         </form>
       </div>
