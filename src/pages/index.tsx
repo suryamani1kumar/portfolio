@@ -1,6 +1,6 @@
 import ExpertArea from "@/component/ExpertArea/ExpertArea";
 import Head from "next/head";
-import styles from "@/styles/Home.module.scss";
+// import styles from "@/styles/Home.module.scss";
 
 export default function Home() {
   return (
@@ -16,14 +16,7 @@ export default function Home() {
           content="MERN Stack Developer, React.js Developer, Frontend Developer, JavaScript Developer, Web Developer Portfolio, Node.js, MongoDB, Express.js, UI Developer"
         />
       </Head>
-      <div className="container">
-        <div className={styles.subContainer}>
-          <div></div>
-          <div>
-            <ExpertArea />
-          </div>
-        </div>
-      </div>
+      <ExpertArea />
     </>
   );
 }

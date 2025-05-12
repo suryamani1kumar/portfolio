@@ -1,0 +1,27 @@
+import Link from "next/link";
+import styles from "./layout.module.scss";
+import ProfileCard from "../profile/ProfileCard";
+interface LayoutProps {
+  children: React.ReactNode;
+}
+const Layout = ({ children }: LayoutProps) => {
+  return (
+    <div className="container">
+      <div className={styles.subContainer}>
+        <ProfileCard />
+        <div>
+          <nav className={styles.Headernav}>
+            <Link href="/">Home</Link>
+            <Link href="/about">About</Link>
+            <Link href="/services">Services</Link>
+            <Link href="/works">Works</Link>
+            <Link href="/contact">Contact</Link>
+          </nav>
+          {children}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Layout;

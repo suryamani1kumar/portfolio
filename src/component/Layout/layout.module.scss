@@ -1,0 +1,57 @@
+.subContainer {
+  display: grid;
+  gap: 5px;
+}
+.Headernav {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  font-size: 0;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+.Headernav a {
+  font-size: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  text-align: center;
+  padding: 0 20px;
+  line-height: 50px;
+}
+
+.Headernav a:hover {
+  color: #585858;
+}
+.Headernav a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #585858;
+  transition: all 0.6s ease 0s;
+  transition: width 0.3;
+}
+.Headernav a:hover::after {
+  width: 100%;
+  transition: width 0.34s;
+}
+@media (max-width: 767px) {
+}
+
+/* Tablets (min width 601px and max width 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .subContainer {
+    grid-template-columns: 1.2fr 3fr;
+  }
+}
+
+/* Desktops (min width 1025px) */
+@media (min-width: 1025px) {
+  .subContainer {
+    grid-template-columns: 1.2fr 3fr;
+  }
+}

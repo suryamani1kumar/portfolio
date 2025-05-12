@@ -1,11 +1,12 @@
 import React from "react";
 import styles from "./expertArea.module.scss";
+import Image from "next/image";
 const skills = [
   {
     name: "HTML",
     icon: "/html.png",
   },
-  { name: "CSS", icon: "/CSS.png" },
+  { name: "CSS", icon: "/css.png" },
   {
     name: "JavaScript",
     icon: "/javascript.png",
@@ -53,7 +54,13 @@ const ExpertArea = () => {
       <div className={styles.grid}>
         {skills.map((skill) => (
           <div className={styles.skill} key={skill.name}>
-            <img src={skill.icon} alt={skill.name} className={styles.icon} />
+            <Image
+              src={skill.icon}
+              alt={skill.name}
+              className={styles.icon}
+              height={0}
+              width={0}
+            />
             <p>{skill.name}</p>
           </div>
         ))}
