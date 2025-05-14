@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./profileCard.module.scss";
 import { FaLinkedin, FaGithub, FaBehance, FaTwitter } from "react-icons/fa";
 import Image from "next/image";
+import { MdOutlineFileDownload, MdOutlineMailOutline } from "react-icons/md";
+import Link from "next/link";
 
 const ProfileCard = () => {
   return (
@@ -16,31 +18,29 @@ const ProfileCard = () => {
         />
         <h2>Suryamani Kumar</h2>
         <p className={styles.subtitle}>
-          Front-end Developer
-          <br />
-          UI/UX Designer
+          Frontend Developer || React.js Developer
         </p>
+        <p className={styles.subtitle}>MERN Stack Developer</p>
       </div>
 
       <div className={styles.info}>
-        <div>
-          <strong>Residence:</strong> <span>Canada</span>
-        </div>
-        <div>
-          <strong>City:</strong> <span>Toronto</span>
-        </div>
-        <div>
-          <strong>Age:</strong> <span>26</span>
-        </div>
+        Skilled MERN Stack Developer with a strong focus on building fast,
+        SEO-friendly, and responsive web applications using React.js.
+        Experienced in optimizing performance, improving load times, and
+        following best practices to enhance search engine visibility and user
+        experience.
       </div>
-
-      <div className={styles.languages}>
-        {["100%", "90%", "70%"].map((val, i) => (
-          <div key={i} className={styles.lang}>
-            <div className={styles.circle}>{val}</div>
-            <p>{["French", "English", "Spanish"][i]}</p>
-          </div>
-        ))}
+      <div className={styles.download}>
+        <button className={styles.downloadcv}>
+          <Link href={`/javascript.png`} download="myFile">
+            Download cv <MdOutlineFileDownload />
+          </Link>
+        </button>
+        <button className={styles.downloadcv}>
+          <Link href={`/javascript.png`} download="myFile">
+            Send Email <MdOutlineMailOutline />
+          </Link>
+        </button>
       </div>
 
       <div className={styles.skills}>
@@ -64,9 +64,9 @@ const ProfileCard = () => {
       </div>
 
       <ul className={styles.tech}>
-        <li>✔ Bootstrap, Materialize</li>
-        <li>✔ Stylus, Sass, Less</li>
-        <li>✔ Gulp, Webpack, Grunt</li>
+        <li> Bootstrap, Materialize</li>
+        <li> Stylus, Sass, Less</li>
+        <li> Gulp, Webpack, Grunt</li>
       </ul>
 
       <div className={styles.footer_icons}>

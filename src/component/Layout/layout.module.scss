@@ -1,6 +1,7 @@
 .subContainer {
   display: grid;
-  gap: 5px;
+  gap: 30px;
+  height: 90vh;
 }
 .Headernav {
   position: relative;
@@ -38,6 +39,11 @@
 .Headernav a:hover::after {
   width: 100%;
   transition: width 0.34s;
+}
+.pageContainer {
+  overflow-y: auto;
+  height: 80vh;
+  scrollbar-width: none;
 }
 @media (max-width: 767px) {
 }

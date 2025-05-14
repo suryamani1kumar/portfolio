@@ -17,7 +17,11 @@ const Layout = ({ children }: LayoutProps) => {
             <Link href="/works">Works</Link>
             <Link href="/contact">Contact</Link>
           </nav>
-          {children}
+          <div
+            className={styles.pageContainer}
+          >
+            {children}
+          </div>
         </div>
       </div>
     </div>
