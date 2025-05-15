@@ -1,0 +1,43 @@
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 20px 25px;
+  .title {
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: #333;
+  }
+  .grid {
+    display: flex;
+    // grid-template-columns: repeat(2, minmax(100px, 1fr));
+    flex-wrap: wrap;
+    gap: 16px;
+    .skill {
+      color: #545454;
+      border: 1px solid #d3d3d3;
+      border-radius: 5px;
+      align-items: center;
+      width: max-content;
+      padding: 5px 10px;
+      font-size: 15px;
+      display: flex;
+      cursor: pointer;
+      .icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+        border-radius: 5px;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+/* Tablets (min width 601px and max width 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+
+/* Desktops (min width 1025px) */
+@media (min-width: 1025px) {
+}
