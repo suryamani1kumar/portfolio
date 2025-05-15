@@ -61,7 +61,7 @@ const ExpertArea = () => {
               height={0}
               width={0}
             />
-            <p>{skill.name}</p>
+            {skill.name}
           </div>
         ))}
       </div>

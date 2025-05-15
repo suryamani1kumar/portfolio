@@ -13,7 +13,6 @@
 html,
 body {
   max-width: 100vw;
-  overflow: hidden;
   max-height: 100vh;
 }
 
@@ -38,7 +37,28 @@ a {
 .container {
   width: 100%;
   max-width: 1170px;
-  margin: 30px auto;
+  margin: 0 auto;
+}
+
+/* Tablets (min width 601px and max width 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  html,
+  body {
+    max-width: 100vw;
+    overflow: hidden;
+    max-height: 100vh;
+  }
+}
+
+/* Desktops (min width 1025px) */
+@media (min-width: 1025px) {
+  .container {
+    margin: 50px auto;
+  }
+  html,
+  body {
+    overflow: hidden;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
