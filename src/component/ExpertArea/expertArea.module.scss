@@ -3,16 +3,22 @@
   border-radius: 12px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   padding: 20px 25px;
+  margin-bottom: 15px;
   .title {
     font-size: 18px;
-    margin-bottom: 16px;
+    margin-bottom: 15px;
     color: #333;
   }
+  .skillDescrip {
+    font-size: 15px;
+    color: #333;
+  }
+
   .grid {
     display: flex;
-    // grid-template-columns: repeat(2, minmax(100px, 1fr));
     flex-wrap: wrap;
     gap: 16px;
+    margin: 15px 0 0;
     .skill {
       color: #545454;
       border: 1px solid #d3d3d3;
