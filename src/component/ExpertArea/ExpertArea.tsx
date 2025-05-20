@@ -11,35 +11,43 @@ const skills = [
       {
         name: "HTML",
         icon: "/html.png",
+        rating: 12,
       },
-      { name: "CSS", icon: "/css.png" },
+      { name: "CSS", icon: "/css.png", rating: 12 },
       {
         name: "JavaScript",
         icon: "/javascript.png",
+        rating: 12,
       },
       {
         name: "React",
         icon: "/reactjs.png",
+        rating: 12,
       },
       {
         name: "Next.js",
         icon: "/nextjs.png",
+        rating: 12,
       },
       {
         name: "Material Design",
         icon: "/material-ui.png",
+        rating: 12,
       },
       {
         name: "Tailwind CSS",
         icon: "/tailwind.png",
+        rating: 12,
       },
       {
         name: "Sass",
         icon: "/scss.png",
+        rating: 12,
       },
       {
         name: "Redux",
         icon: "/redux.png",
+        rating: 12,
       },
     ],
   },
@@ -51,6 +59,7 @@ const skills = [
       {
         name: "Node.js",
         icon: "/nodejs.png",
+        rating: 12,
       },
     ],
   },
@@ -62,6 +71,7 @@ const skills = [
       {
         name: "MongoDB",
         icon: "/mongodb.png",
+        rating: 12,
       },
     ],
   },
@@ -73,8 +83,9 @@ const skills = [
       {
         name: "Git",
         icon: "/git.png",
+        rating: 12,
       },
-      { name: "Github", icon: "/github.png" },
+      { name: "Github", icon: "/github.png", rating: 12 },
     ],
   },
 ];
@@ -86,15 +97,17 @@ const ExpertArea = () => {
       <p className={styles.skillDescrip}>{skill.skillSmallDescription}</p>
       <div className={styles.grid}>
         {skill.skillList.map((skilllist, index) => (
-          <div className={styles.skill} key={index}>
-            <Image
-              src={skilllist.icon}
-              alt={skilllist.name}
-              className={styles.icon}
-              height={0}
-              width={0}
-            />
-            {skilllist.name}
+          <div className={styles.skill} key={index} skill-rating={12}>
+            <p>
+              <Image
+                src={skilllist.icon}
+                alt={skilllist.name}
+                className={styles.icon}
+                height={0}
+                width={0}
+              />
+              <span>{skilllist.name}</span>
+            </p>
           </div>
         ))}
       </div>
