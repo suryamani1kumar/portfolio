@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>MERN Stack & React.js Developer | Frontend Portfolio</title>
+        {/* <title>MERN Stack & React.js Developer | Frontend Portfolio</title> */}
         <meta
           name="description"
           content="Portfolio of a skilled MERN Stack and React.js developer specializing in building responsive, high-performance web apps with modern JavaScript and UI/UX best practices."

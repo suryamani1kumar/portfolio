@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const ProfileCard = () => {
   return (
-    <div className={styles.card}>
+    <div className={styles.profilecard}>
       <div className={styles.profile}>
         <Image
           src="/reactjs.png"

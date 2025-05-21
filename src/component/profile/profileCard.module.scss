@@ -1,10 +1,10 @@
-.card {
+.profilecard {
   background: #1a1a2e;
   color: white;
   padding: 20px;
   font-family: sans-serif;
   text-align: center;
-
+  height: max-content;
   .avatar {
     width: 100px;
     height: 100px;
@@ -38,7 +38,7 @@
     margin-top: 20px;
     display: flex;
     color: #bbb;
-     font-size: 15px;
+    font-size: 15px;
     justify-content: space-around;
     .downloadcv {
       padding: 10px;
@@ -108,5 +108,16 @@
         color: #f9c80e;
       }
     }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+
+/* Desktops (min width 1025px) */
+@media (min-width: 1025px) {
+  .profilecard {
+    position: sticky;
+    top: 0;
   }
 }

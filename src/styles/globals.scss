@@ -40,6 +40,15 @@ a {
   margin: 0 auto;
 }
 
+.mobilesidenave {
+  position: fixed;
+  top: 0;
+  display: flex !important;
+  flex-direction: column;
+  height: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
 /* Tablets (min width 601px and max width 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   html,
